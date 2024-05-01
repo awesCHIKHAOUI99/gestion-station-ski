@@ -2,9 +2,16 @@ pipeline {
     agent any
    
     stages {
-        stage('Compile') { // Corrected the stage name
+        stage('git checkout') { // Corrected the stage name
             steps {
                 checkout scm
+                
+            }
+        }
+         stage('Compile') { // Corrected the stage name
+            steps {
+                
+                 sh 'mvn compile'
             }
         }
         stage('Test/Junit') {
