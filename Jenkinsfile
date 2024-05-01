@@ -28,6 +28,14 @@ pipeline {
                 }
             }
         }
+        stage('Nexus') {
+            steps {
+                script {
+                    echo 'hello from Nexus'
+                }
+            }
+        }
+        
     }
 }
 
