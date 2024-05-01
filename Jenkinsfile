@@ -1,9 +1,33 @@
 pipeline {
     agent any
-    
+   
     stages {
-        stage('Checkout') {
+        stage('compile) {
             steps {
                 checkout scm
             }
-        }}}
+        }
+        stage('Test/Junit') {
+            steps {
+                script {
+                   echo 'hello from test'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
+                    echo ' hello from build'
+                }
+            }
+        }
+        stage('Sonar') {
+            steps {
+                script {
+                         echo ' hello from sonar'
+                }
+            }
+        }
+    }
+}
+
