@@ -17,7 +17,7 @@ pipeline {
         stage('Test/Junit') {
             steps {
                 script {
-                   sh 'mvn clean test'
+                   sh 'mvn test'
                 }
             }
         }
