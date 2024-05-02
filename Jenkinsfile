@@ -17,7 +17,7 @@ pipeline {
         stage('Test/Junit') {
             steps {
                 script {
-                   sh 'mvnw test'
+                   sh './mvnw test'
                 }
             }
         }
