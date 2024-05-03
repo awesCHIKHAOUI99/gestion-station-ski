@@ -43,15 +43,14 @@ registry = "10.0.2.15:8083"
             steps {
                 script {
                                         
-                                    docker.withRegistry("http://"+registry,registryCredentials ) {
-                     sh "docker push ${registry}/springBootapp:0.0"
+                      sh 'mvn deploy -DskipTests'
                
                 }
             }
         }
         
     }
-}
+
 }
 
 
