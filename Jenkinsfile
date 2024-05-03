@@ -42,8 +42,8 @@ registry = "10.0.2.15:8083"
         stage('Nexus') {
             steps {
                 script {
-                    docker.withRegistry("http://"+registry,
-                     registryCredentials ) {
+                                        
+                                    docker.withRegistry("http://"+registry,registryCredentials ) {
                      sh "docker push ${registry}/springBootapp:0.0"
                
                 }
@@ -51,6 +51,7 @@ registry = "10.0.2.15:8083"
         }
         
     }
+}
 }
 
 
