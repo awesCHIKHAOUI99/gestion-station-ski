@@ -15,7 +15,7 @@ registry = "10.0.2.15:8083"
          stage('Compile') { // Corrected the stage name
             steps {
                 
-                 sh 'mvn compile'
+                 sh 'mvn clean compile'
             }
         }
         stage('Test/Junit') {
@@ -28,14 +28,14 @@ registry = "10.0.2.15:8083"
         stage('Build') {
             steps {
                 script {
-                    sh 'mvn clean package'
+                    sh 'mvn clean install -DskipTests'
                 }
             }
         }
         stage('Sonar') {
             steps {
                 script {
-                    echo 'hello from sonar'
+                    sh 'mvn sonar:sonar -Dsonar.name=admin -Dsonar.password=awes'
                 }
             }
         }
